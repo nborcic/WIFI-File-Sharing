@@ -1,0 +1,30 @@
+# Node
+node_modules/
+
+# SvelteKit
+.svelte-kit/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+
+# Docker
+shared/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Misc
+*.local
