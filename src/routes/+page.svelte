@@ -57,7 +57,7 @@
   <h1 class="text-2xl font-bold mb-4">WIFI File Sharing</h1>
 
   <div class="mb-6">
-    <input type="file" bind:this={fileInput} class="mr-2" multiple webkitdirectory directory />
+    <input type="file" bind:this={fileInput} class="mr-2" multiple />
     <button on:click={uploadFile} disabled={uploading} class="bg-blue-500 text-white px-4 py-2 rounded">
       {uploading ? 'Uploading...' : 'Upload'}
     </button>

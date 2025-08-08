@@ -1,0 +1,17 @@
+services:
+  wifi-file-sharing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wifi-file-sharing:latest
+    container_name: wifi-file-sharing
+    ports:
+      - "3000:3000"
+    # Use a host bind mount for easy access to shared files from Windows/Android.
+    # By default it uses ./shared inside the project. Override with HOST_SHARED_DIR env var.
+    volumes:
+      - ${HOST_SHARED_DIR:-./shared}:/app/shared
+    restart: unless-stopped
+
+volumes: {}
+
