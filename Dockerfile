@@ -3,11 +3,11 @@ FROM node:20-alpine
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm install && npm run prepare
+RUN npm ci --ignore-scripts
 
 COPY . .
 
-RUN npm run build
+RUN npm run prepare && npm run build
 
 EXPOSE 3000
 

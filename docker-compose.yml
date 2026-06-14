@@ -6,7 +6,12 @@ services:
     image: wifi-file-sharing:latest
     container_name: wifi-file-sharing
     ports:
-      - "3000:3000"
+      - '3000:3000'
+    environment:
+      # Docker Desktop containers cannot reliably detect the Windows host LAN IP.
+      # Set PHONE_URL to the address phones should open, for example:
+      # PHONE_URL=http://192.168.1.145:3000 docker compose up -d --build
+      PHONE_URL: ${PHONE_URL:-}
     # Use a host bind mount for easy access to shared files from Windows/Android.
     # By default it uses ./shared inside the project. Override with HOST_SHARED_DIR env var.
     volumes:
@@ -14,4 +19,3 @@ services:
     restart: unless-stopped
 
 volumes: {}
-
